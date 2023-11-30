@@ -14,40 +14,36 @@ import whiteRook from '/icons/white-rook.svg';
 import whitePawn from '/icons/white-pawn.svg';
 
 
-// const PIECES = {
-//   'king': blackKing,
-//   'queen': blackQueen,
-//   'bishop': blackBishop,
-//   'knight': blackKnight,
-//   'rook': blackRook,
-//   'pawn': blackPawn,
-// }
-
-
 export default function App() {
-  const [grid, setGrid] = useState({
-    0: whiteRook,
-    1: whiteKnight,
-    2: whiteBishop,
-    3: whiteQueen,
-    4: whiteKing,
-    5: whiteBishop,
-    6: whiteKnight,
-    7: whiteRook,
-    56: blackRook,
-    57: blackKnight,
-    58: blackBishop,
-    59: blackQueen,
-    60: blackKing,
-    61: blackBishop,
-    62: blackKnight,
-    63: blackRook,
+  const [grid, setGrid] = useState(() => {
+     let obj = {
+      0: whiteRook,
+      1: whiteKnight,
+      2: whiteBishop,
+      3: whiteQueen,
+      4: whiteKing,
+      5: whiteBishop,
+      6: whiteKnight,
+      7: whiteRook,
+      56: blackRook,
+      57: blackKnight,
+      58: blackBishop,
+      59: blackQueen,
+      60: blackKing,
+      61: blackBishop,
+      62: blackKnight,
+      63: blackRook,
+    };
+    for (let i = 0; i < 8; i++) {
+      obj[8 + i] = whitePawn;
+      obj[48 + i] = blackPawn;
+    }
+
+    return obj;
   });
 
   return (
     <>
-      <h1 style={{backgroundColor: 'gray', width: '100%'}}>Hello, World!</h1>
-
       <div id='board'>
         {[...Array(8 * 8).keys()].map((x) => {
           return (
@@ -60,6 +56,7 @@ export default function App() {
           );
         })}
       </div>
+
     </>
   )
 }

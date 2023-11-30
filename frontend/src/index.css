@@ -31,7 +31,8 @@ body {
   display: flex;
   flex-direction: column;
   place-items: center;
-  width: 100vw;
+  min-height: 100vh;
+  background-color: white;
 }
 
 h1 {
