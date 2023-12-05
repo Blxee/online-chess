@@ -1,11 +1,18 @@
+@font-face {
+  font-family: 'Nunito';
+  src: url('/fonts/nunito-v26-latin-regular.woff2')
+    url('/fonts/nunito-v26-latin-700.woff2')  format('woff2'),
+    url('/fonts/Nunito-VariableFont_wght.ttf') format('truetype');
+}
+
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: 'Nunito', Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
 
   color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  /* color: rgba(255, 255, 255, 0.87); */
+  /* background-color: #242424; */
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -36,39 +43,32 @@ body {
   background-color: white;
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
-}
-
 button {
-  border-radius: 8px;
-  border: 1px solid transparent;
+  position: relative;
+  top: 0;
+  border-radius: 0.6em;
+  border: 0.1em solid darkgreen;
+  color: lightgreen;
+  text-shadow: 0.1em 0.1em 0px darkgreen;
+  font-weight: 700;
   padding: 0.6em 1.2em;
   font-size: 1em;
-  font-weight: 500;
+  font-weight: 700;
   font-family: inherit;
-  background-color: #1a1a1a;
+  background-color: green;
   cursor: pointer;
-  transition: border-color 0.25s;
+  box-shadow: 0px 0.4em 0px darkgreen;
+  transition: all 250ms ease;
 }
-button:hover {
+button:active {
+  top: 0.4em;
   border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+  box-shadow: none !important;
 }
 
 @media (prefers-color-scheme: light) {
   :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
+    /* color: #213547; */
+    /* background-color: #ffffff; */
   }
 }
