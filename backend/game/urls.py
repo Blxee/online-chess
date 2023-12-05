@@ -9,5 +9,5 @@ urlpatterns = [
 
 
 websocket_urlpatterns = [
-    re_path('ws/socket-server/', game_consumers.GameConsumer.as_asgi()),
+    re_path('ws/server-socket/', game_consumers.GameConsumer.as_asgi()),
 ]
