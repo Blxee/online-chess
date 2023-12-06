@@ -1,3 +1,25 @@
 * {
-  background-color: red;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  flex-flow: column nowrap;
+  min-height: 100vh;
+  background-color: lightgrey;
+}
+
+main > section {
+  margin: 5rem;
+}
+main > section:nth-child(odd) {
+  background-color: cyan;
+}
+main > section:nth-child(even) {
+  background-color: crimson;
+}
+
+footer {
+  color: white;
+  background-color: black;
 }
