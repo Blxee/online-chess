@@ -32,7 +32,7 @@ ALLOWED_HOSTS = ['localhost']
 
 INSTALLED_APPS = [
     'daphne',
-    'rest_framework',
+    # 'rest_framework',
     'game.apps.GameConfig',
     'django.contrib.admin',
     'django.contrib.auth',
