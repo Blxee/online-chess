@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import './GameBoard.css';
 import blackKing from '/icons/black-king.svg';
 import blackQueen from '/icons/black-queen.svg';
@@ -14,7 +14,22 @@ import whiteRook from '/icons/white-rook.svg';
 import whitePawn from '/icons/white-pawn.svg';
 
 
+// Chess board component
 export default function GameBoard() {
+
+  // Connect to the server using a WebSocket
+  useEffect(() => {
+    const socketLink = `ws://${window.location.host}/ws/server-socket/`;
+    const socket = new WebSocket(socketLink);
+
+    socket.onmessage = event => {
+      const data = JSON.parse(event.data);
+      console.log(data);
+    }
+    socket.onerror = err => { alert(err); };
+  }, []);
+
+  // Initialize the chess grid with the default layout
   const [grid, setGrid] = useState(() => {
      let obj = {
       0: whiteRook,
@@ -51,7 +66,7 @@ export default function GameBoard() {
               <div className='cell' key={x}>
                 { grid[x] && <img src={grid[x]}/> }
               </div>
-              { x % 8 === 7 && <div className='cell' hidden></div> }
+              { x % 8 === 7 && <div className='cell' key={1} hidden></div> }
             </>
           );
         })}

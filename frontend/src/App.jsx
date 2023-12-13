@@ -3,16 +3,8 @@ import './App.css';
 import GameBoard from './GameBoard'
 
 
+// Main app conponent
 export default function App() {
-
-  useEffect(() => {
-    const socket = new WebSocket('ws://localhost:8000/ws/server-socket/');
-
-    socket.onmessage = event => {
-      const data = JSON.parse(event.data);
-      console.log(data);
-    }
-  }, []);
 
   const joinRandom = () => {
     setTimeout(() => setContent(<GameBoard />), 250);
