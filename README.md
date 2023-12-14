@@ -1,2 +1,0 @@
-# OnlineChess:  
-My portfolio project

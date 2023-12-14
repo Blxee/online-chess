@@ -1,0 +1,22 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Rubik', sans-serif;
+  font-size: 1.4em;
+  margin: 1em;
+}
+
+#chess-board {
+  max-width: 100%;
+  border-radius: 1em;
+}
+
+.card {
+  background-color: gray;
+  max-width: 100%;
+  border-radius: 1em;
+  padding: 1em;
+  margin-top: 1em;
+}
